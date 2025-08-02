@@ -4,11 +4,15 @@
 @theme {
   --color-primary: rgb(47, 56, 104);
   --color-primary-light: rgba(47, 56, 104, 0.896);
-  
+
 }
 
 * {
   font-family: 'Outfit', sans-serif;
   box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
 }
 

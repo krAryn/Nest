@@ -7,7 +7,7 @@ import BackgrounImage from '../components/BackgrounImage';
 
 const Login = () => {
 
-  const { showLogin, showSignUp, setShowLogin, setShowSignUp } = useAppContext()
+  const { showLogin, showSignUp, setShowLogin, setShowSignUp, navigate } = useAppContext()
 
   return (
     <div
@@ -22,18 +22,32 @@ const Login = () => {
 
       {showLogin && (
         <div className='login bg-black/80 absolute z-10 w-screen h-screen overflow-hidden flex items-center justify-center'>
+          <div
+            onClick={(e) => e.stopPropagation()}
+          >
           <SignIn />
+          </div>
         </div>
       )}
       {showSignUp && (
         <div className='signup bg-black/80 absolute z-10 w-screen h-screen overflow-hidden flex items-center justify-center'>
+          <div
+            onClick={(e) => e.stopPropagation()}
+          >
           <SignUp />
+          </div>
         </div>
       )}
 
       <div className='max-w-[1300px] md:px-14 max-md:px-10 flex flex-col mx-auto w-full h-[100vh] overflow-hidden'>
       <nav className='flex md:justify-between w-[100%] py-4 md:py-8 h-fit'>
-        <img src={assets.logo} className='h-12 max-md:h-10 object-contain max-md:m-auto' alt="" />
+        <img 
+        src={assets.logo} 
+        className='h-12 max-md:h-10 object-contain max-md:m-auto cursor-pointer' 
+        alt="" 
+        onClick={() => navigate("/")}
+      />
+
         <div className='max-md:hidden flex gap-5 items-center'>
           <button
             className='bg-primary border border-primary hover:bg-primary-light hover:border-primary-light hover:scale-110 transition text-white px-6 py-1 rounded-full'
