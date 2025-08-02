@@ -9,12 +9,27 @@ import Discover from '../pages/Discover'
 import Profile from '../pages/Profile'
 import Layout from '../pages/Layout'
 import CreatePost from '../pages/CreatePost'
+import { SignedIn, SignedOut } from '@clerk/clerk-react'
+import AppContextProvider from '../context/AppContext'
+
+const Index = () => {
+  return (
+    <>
+      <SignedOut>
+        <Login />
+      </SignedOut>
+      <SignedIn>
+        <Layout />
+      </SignedIn>
+    </>
+  )
+}
 
 const App = () => {
   return (
-    <div>
+    <AppContextProvider>
       <Routes>
-        <Route path="/" element={<Login />}>
+        <Route path="/" element={<Index />}>
           <Route index element={<Feed />} />
           <Route path="messages" element={<Messages />} />
           <Route path="messages/:userId" element={<ChatBox />} />
@@ -25,7 +40,7 @@ const App = () => {
           <Route path="create-post" element={<CreatePost />} />
         </Route>
       </Routes>
-    </div>
+    </AppContextProvider>
   )
 }
 
