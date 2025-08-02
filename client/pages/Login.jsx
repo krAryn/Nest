@@ -3,6 +3,7 @@ import { assets } from '../src/assets/assets';
 import { Star } from 'lucide-react';
 import { SignIn, SignUp } from '@clerk/clerk-react';
 import { useAppContext } from '../context/AppContext';
+import BackgrounImage from '../components/BackgrounImage';
 
 const Login = () => {
 
@@ -15,7 +16,9 @@ const Login = () => {
         setShowSignUp(false)
       }}
     >
-      <img src={assets.bgImage} className='absolute top-0 left-0 -z-1 w-full h-full object-cover' alt="" />
+
+      {/* <div className='backgroun-image bg-linear-40 from-blue-500 via-orange-400 via-red-300 via-purple-500 to-pink-500 w-screen h-screen opacity-15 absolute top-0 left-0 -z-1'></div> */}
+      <BackgrounImage />
 
       {showLogin && (
         <div className='login bg-black/80 absolute z-10 w-screen h-screen overflow-hidden flex items-center justify-center'>

@@ -4,6 +4,7 @@
 @theme {
   --color-primary: rgb(47, 56, 104);
   --color-primary-light: rgba(47, 56, 104, 0.896);
+  
 }
 
 * {
