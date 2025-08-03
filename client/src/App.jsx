@@ -11,6 +11,7 @@ import Layout from './pages/Layout'
 import CreatePost from './pages/CreatePost'
 import AppContextProvider from './context/AppContext'
 import { useUser } from '@clerk/clerk-react'
+import {Toaster} from "react-hot-toast"
 
 const App = () => {
 
@@ -19,6 +20,7 @@ const App = () => {
 
   return (
     <AppContextProvider>
+      <Toaster />
       <Routes>
         <Route path="/" element={user? <Layout />: <Login />}>
           <Route index element={<Feed />} />
