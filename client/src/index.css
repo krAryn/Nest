@@ -5,6 +5,12 @@
   --color-primary: rgb(47, 56, 104);
   --color-primary-light: rgba(47, 56, 104, 0.896);
 
+  /* For Linear Gradient */
+  --color-initial: rgb(47, 56, 104);
+  --color-final: rgb(30 60 169);
+  --color-initial-light: rgba(47, 56, 104, 0.896);
+  --color-final-light: rgb(29 74 214);
+
 }
 
 * {
@@ -16,3 +22,11 @@ button {
   cursor: pointer;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

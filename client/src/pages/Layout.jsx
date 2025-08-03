@@ -13,22 +13,33 @@ const Layout = () => {
 
   return user
     ? (
-      <div className='layout w-full flex h-screen'>
+      <div className={`layout w-screen flex h-screen`}>
         <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-        {/* <UserButton /> */}
-        <div className='bg-slate-50 w-full'>
+
+
+
+        <div className={`content max-sm:w-screen w-[calc(100vw-250px)] bg-slate-50 `}>
+          <div className={`sm:hidden ${sidebarOpen? "max-sm:block" : "max-sm:hidden"} absolute w-full h-full bg-black/25`}
+            onClick={() => setSidebarOpen(false)}
+          ></div>
+
+          <div className='outlet-container w-full h-screen pt-10 xl:pr-5 overflow-y-hidden'>
           <Outlet />
+          </div>
+
         </div>
+
 
         {
           sidebarOpen   
-            ? <X className='absolute top-3 right-3 p-2 z-100 by-white rounded-md shadow w-10 h-10 text-gray-600 sm:hidden'
+            ? <X className='absolute top-3 right-3 p-2 z-200 bg-white rounded-md shadow w-10 h-10 text-gray-600 sm:hidden cursor-pointer'
               onClick={() => setSidebarOpen(false)}
             />
-            : <Menu className='absolute top-3 right-3 p-2 z-100 by-white rounded-md shadow w-10 h-10 text-gray-600 sm:hidden'
+            : <Menu className='absolute top-3 right-3 p-2 z-200 bg-white rounded-md shadow w-10 h-10 text-gray-600 sm:hidden cursor-pointer'
               onClick={() => setSidebarOpen(true)}
             />
         }
+
       </div>
     ) : (
 
