@@ -18,7 +18,7 @@ const Layout = () => {
 
 
 
-        <div className={`content max-sm:w-screen w-[calc(100vw-250px)] bg-slate-50 `}>
+        <div className={`content max-sm:w-screen w-[calc(100vw-300px)] bg-slate-50 `}>
           <div className={`sm:hidden ${sidebarOpen? "max-sm:block" : "max-sm:hidden"} absolute w-full h-full bg-black/25`}
             onClick={() => setSidebarOpen(false)}
           ></div>
