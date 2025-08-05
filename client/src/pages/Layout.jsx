@@ -15,15 +15,12 @@ const Layout = () => {
     ? (
       <div className={`layout w-screen flex h-screen`}>
         <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-
-
-
-        <div className={`content max-sm:w-screen w-[calc(100vw-300px)] bg-slate-50 `}>
+        <div className={`content max-sm:w-screen w-[calc(100vw-300px)] h-screen bg-slate-50 `}>
           <div className={`sm:hidden ${sidebarOpen? "max-sm:block" : "max-sm:hidden"} absolute w-full h-full bg-black/25`}
             onClick={() => setSidebarOpen(false)}
           ></div>
 
-          <div className='outlet-container w-full h-screen pt-10 xl:pr-5 overflow-y-hidden'>
+          <div className='outlet-container w-full h-screen xl:pr-5 overflow-y-hidden'>
           <Outlet />
           </div>
 
