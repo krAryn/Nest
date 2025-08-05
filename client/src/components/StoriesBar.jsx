@@ -12,6 +12,9 @@ const StoriesBar = () => {
     const [showModel, setShowModel] = useState(false)
     const [viewStory, setViewStory] = useState(null)
     const [showNextPrevBtn, setShowNextPrevBtn] = useState()
+    const observer = new ResizeObserver((entries) => {
+        setShowNextPrevBtn(document.querySelector(".stories-section").offsetWidth < entries[0].target.offsetWidth)
+    })
 
     const fetchStories = async () => {
         setStories(dummyStoriesData)
@@ -22,9 +25,6 @@ const StoriesBar = () => {
         observer.observe(document.querySelector(".stories-section .card-container"))
     }, [])
 
-    const observer = new ResizeObserver((entries) => {
-        setShowNextPrevBtn(document.querySelector(".stories-section").offsetWidth < entries[0].target.offsetWidth)
-    })
 
     document.querySelector(".stories-section")?.offsetWidth === document.querySelector(".stories-section .card-container")?.offsetWidth
 
