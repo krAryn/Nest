@@ -1,5 +1,5 @@
 import { UserButton } from '@clerk/clerk-react'
-import React, { useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Sidebar from '../components/Sidebar'
 import { Outlet } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
@@ -10,6 +10,16 @@ const Layout = () => {
 
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const user = dummyUserData
+  const outletContainerRef = useRef()
+
+  useEffect(() => {
+    if (document.querySelector("body").clientWidth < 640) {
+      outletContainerRef.current.style.paddingTop = "60px"
+    } else {
+      outletContainerRef.current.style.paddingTop = "20px"
+    }
+  })
+
 
   return user
     ? (
@@ -20,7 +30,7 @@ const Layout = () => {
             onClick={() => setSidebarOpen(false)}
           ></div>
 
-          <div className='outlet-container w-full h-screen xl:pr-5 overflow-y-hidden'>
+          <div ref={outletContainerRef} className='outlet-container w-full h-screen xl:pr-5 overflow-y-hidden'>
           <Outlet />
           </div>
 

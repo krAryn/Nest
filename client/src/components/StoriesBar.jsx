@@ -14,7 +14,10 @@ const StoriesBar = () => {
     const [viewStory, setViewStory] = useState(null)
     const [showNextPrevBtn, setShowNextPrevBtn] = useState()
     const observer = new ResizeObserver((entries) => {
-        setShowNextPrevBtn(document.querySelector(".stories-section")?.offsetWidth < entries[0].target.offsetWidth)
+        
+        if (document.querySelector("body").clientWidth > 640) {
+            setShowNextPrevBtn(document.querySelector(".stories-section")?.offsetWidth < entries[0].target.offsetWidth)
+        }
     })
 
     const fetchStories = async () => {
