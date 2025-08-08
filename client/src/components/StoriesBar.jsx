@@ -3,7 +3,7 @@ import { dummyStoriesData } from '../assets/assets'
 import { Plus } from 'lucide-react'
 import moment from "moment"
 import CreateStory from './CreateStory'
-import { slide } from "../utils/horizontalScroll.js"
+import { slide } from "../utils/horizontalScroll"
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import StoryViewer from './StoryViewer.jsx'
 

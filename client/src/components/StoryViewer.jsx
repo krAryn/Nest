@@ -74,7 +74,7 @@ const StoryViewer = ({ viewStory, setViewStory }) => {
   }
 
   return (
-    <div className='fixed inset-0 h-screen bg-opacity-90 z-110 flex items-center justify-center bg-primary z-300'
+    <div className='fixed inset-0 h-screen bg-opacity-90 flex items-center justify-center bg-primary z-300 select-none'
     onDoubleClick={() => setViewStory(false)}>
       {/* Progress Bar */}
       <div className='absolute top-0 left-0 w-full h-1 bg-gray-700'>

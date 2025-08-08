@@ -2,7 +2,7 @@ import React from 'react';
 
 const Discover = () => {
   return (
-    <div>
+    <div className='h-full overflow-y-auto'>
       <h1>Discover</h1>
     </div>
   );
