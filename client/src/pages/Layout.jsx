@@ -30,7 +30,7 @@ const Layout = () => {
             onClick={() => setSidebarOpen(false)}
           ></div>
 
-          <div ref={outletContainerRef} className='outlet-container w-full h-screen xl:pr-5 overflow-y-hidden'>
+          <div ref={outletContainerRef} className='outlet-container w-full h-screen overflow-y-hidden'>
           <Outlet />
           </div>
 

@@ -24,7 +24,7 @@ const PostCard = ({ post }) => {
                 <div>
                     <div className='flex items-center space-x-1'>
                         <span>{post.user.full_name}</span>
-                        <BadgeCheck className='w-4 h-4 text-green-600' />
+                        <BadgeCheck className='w-4 h-4 text-blue-500' />
                     </div>
                     <div className='text-gray-500 text-sm'>
                         @{post.user.username} <Dot className='inline-block' /> {moment(post.createdAt).fromNow()}
