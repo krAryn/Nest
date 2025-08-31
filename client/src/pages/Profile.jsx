@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom'
+import { Link, Outlet, useParams } from 'react-router-dom'
 import { dummyPostsData, dummyUserData } from '../assets/assets';
 import Loader from '../components/Loader';
 // import UserProfileInfo from '../components/UserProfileInfo';
@@ -27,7 +27,7 @@ const Profile = () => {
 
   return user ? (
     <div className='h-full overflow-y-auto bg-gray-50 p-6'>
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="bg-white rounded-2xl shadow overflow-hidden">
           <div className="h-40 md:h-56 bg-gradient-to-r from-initial to-final">
             {user.cover_photo && <img src={user.cover_photo} className='w-full h-full object-cover' alt="" />}
@@ -95,14 +95,9 @@ const Profile = () => {
                 </button>
               ))}
             </div>
-            {/* Posts */}
-            {activeTab === "posts" && (
-              <div className='mt-6 flex flex-col items-center gap-6'>
-                {posts.map((post) => (
-                  <PostCard key={post._id} post={post} />
-                ))}
-              </div>
-            )}
+
+            <Outlet />
+
 
             {/* Media */}
             {activeTab === "media" && (

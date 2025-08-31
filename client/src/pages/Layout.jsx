@@ -12,15 +12,6 @@ const Layout = () => {
   const user = dummyUserData
   const outletContainerRef = useRef()
 
-  useEffect(() => {
-    if (document.querySelector("body").clientWidth < 640) {
-      outletContainerRef.current.style.paddingTop = "60px"
-    } else {
-      outletContainerRef.current.style.paddingTop = "20px"
-    }
-  })
-
-
   return user
     ? (
       <div className={`layout w-screen flex h-screen`}>
@@ -30,7 +21,7 @@ const Layout = () => {
             onClick={() => setSidebarOpen(false)}
           ></div>
 
-          <div ref={outletContainerRef} className='outlet-container w-full h-screen overflow-y-hidden'>
+          <div ref={outletContainerRef} className='outlet-container w-full h-screen overflow-y-hidden p-5'>
           <Outlet />
           </div>
 
@@ -42,8 +33,9 @@ const Layout = () => {
             ? <X className='absolute top-3 right-3 p-2 z-200 bg-white rounded-md shadow w-10 h-10 text-gray-600 sm:hidden cursor-pointer'
               onClick={() => setSidebarOpen(false)}
             />
-            : <Menu className='absolute top-3 right-3 p-2 z-200 bg-white rounded-md shadow w-10 h-10 text-gray-600 sm:hidden cursor-pointer'
-              onClick={() => setSidebarOpen(true)}
+            : <div className='absolute top-[15%] left-0 z-200 bg-slate-400 rounded-br-md rounded-tr-md shadow w-3 h-20 text-gray-600 sm:hidden cursor-pointer'
+              onTouchEnd={(e) => {e.stopPropagation(); console.log(e); setSidebarOpen(true)}}
+              hidden={sidebarOpen}
             />
         }
 

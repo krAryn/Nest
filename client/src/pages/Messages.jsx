@@ -19,7 +19,7 @@ const Messages = () => {
 
         <div className='flex flex-col gap-3'>
           {dummyConnectionsData.map((user) => (
-            <div key={user._id} className='max-w-xl flex gap-5 p-6 bg-white shadow rounded-md'>
+            <div key={user._id} className='max-w-3xl flex gap-5 p-6 bg-white shadow rounded-md'>
               <img src={user.profile_picture} className='rounded-full size-25 mx-auto' alt="" />
               <div className='flex flex-col'>
                 <p className='font-medium text-slate-700'>{user.full_name}</p>

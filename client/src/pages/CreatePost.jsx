@@ -6,7 +6,7 @@ import toast from 'react-hot-toast'
 const CreatePost = () => {
 
   const [content, setContent] = useState("")
-  const [contentRows, setContextRows] = useState(2)
+  const [contentRows, setContentRows] = useState(2)
   const [images, setImages] = useState([])
   const [loading, setLoading] = useState(false)
 
@@ -33,7 +33,7 @@ const CreatePost = () => {
             </div>
           </div>
 
-            <textarea className='w-full resize-none mt-4 text-sm outline-none placeholder-gray-400' placeholder="What's happening?" onChange={e => {setContent(e.currentTarget.value); console.log(e.target.scrollHeight, " ", e.target.clientHeight);   setContextRows(e.currentTarget.scrollHeight * e.currentTarget.rows / e.currentTarget.clientHeight)}} value={content} rows={Math.min(5, contentRows)} />
+            <textarea className='w-full resize-none mt-4 text-sm outline-none placeholder-gray-400' placeholder="What's happening?" onChange={e => {setContent(e.currentTarget.value); setContentRows(e.currentTarget.scrollHeight * e.currentTarget.rows / e.currentTarget.clientHeight)}} value={content} rows={Math.min(5, contentRows)} />
 
             {images.length > 0 && (
               <div className='flex flex-wrap gap-2 mt-4'>
