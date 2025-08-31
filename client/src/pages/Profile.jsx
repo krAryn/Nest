@@ -6,6 +6,7 @@ import Loader from '../components/Loader';
 import { Calendar, MapPin, PenBox, Verified } from 'lucide-react';
 import moment from 'moment';
 import PostCard from '../components/PostCard';
+import ProfileModel from '../components/ProfileModel';
 
 const Profile = () => {
 
@@ -121,7 +122,7 @@ const Profile = () => {
 
       {/* Profile Edit Section */}
       {showEdit && (
-        <p>Show Profile Edit</p>
+        <ProfileModel setShowEdit={setShowEdit} />
       )}
     </div>
   ) : (<Loader />)
